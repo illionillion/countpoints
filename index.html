@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計算</title>
+  <style>
+    
+
+    ul{
+      margin: 0 auto;
+      
+      
+    }
+
+    li{
+      display: flex;
+      letter-spacing:10px;
+    }
+
+    input{
+      width: 40px;
+      height: 40px;
+      border-radius: 25%;
+      font-size: large;
+      margin-left: 5px;
+    }
+
+    #count1{
+      width: 100px;
+      height: 40px;
+      border: 1px solid black;
+      text-align: center;      
+    }
+  </style>
+</head>
+<body>
+
+  <ul id="ul">
+    <li id="list1">
+      <div id="count1">0</div>
+      <input type="button" id="minus" value="-">
+      <input type="button" id="plus" value="+">
+    </li>
+  </ul>
+  
+  <script>
+    'use strict';
+
+    window.onload=function up(){
+      var data=localStorage.getItem('data');
+
+      document.getElementById('count1').innerHTML=data;
+    }
+
+    document.getElementById('plus').onclick=function plus(){
+      var inint= document.getElementById('count1').innerHTML;
+      console.log(inint);
+      inint=Number(inint)+1;
+
+      localStorage.setItem('data',inint)
+
+      document.getElementById('count1').innerHTML=inint;
+    }    
+
+    document.getElementById('minus').onclick=function minus(){
+      var inint= document.getElementById('count1').innerHTML;
+      console.log(inint);
+      inint=Number(inint)-1;
+
+      localStorage.setItem('data',inint)
+
+      document.getElementById('count1').innerHTML=inint;
+    }    
+  </script>
+</body>
+</html>
