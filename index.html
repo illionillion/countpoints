@@ -41,6 +41,7 @@
       <div id="count1">0</div>
       <input type="button" id="minus" value="-">
       <input type="button" id="plus" value="+">
+      <input type="button" id="reset" value="re">
     </li>
   </ul>
   
@@ -71,7 +72,14 @@
       localStorage.setItem('data',inint)
 
       document.getElementById('count1').innerHTML=inint;
-    }    
+    } 
+
+
+    document.getElementById('reset').onclick=function reset(){
+      localStorage.removeItem('data');
+      //location.reload();
+      document.getElementById('count1').innerHTML=0;
+    }   
   </script>
 </body>
 </html>
